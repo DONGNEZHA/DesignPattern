@@ -4,6 +4,7 @@ public class Animal {
     String AnimalName;
     Race AnimalRace;
     Color AnimalColor;
+    int speed,power,skill,HP=5;
 
     AnimalIngredientFactory factory;// factory interface
 
@@ -26,6 +27,19 @@ public class Animal {
     private void    prepare(){// bind Animal attribute
         AnimalRace=factory.CreateRace();
         AnimalColor=factory.CreateColor();
+        if (AnimalRace.toString().equals("cat")){
+            skill+=3;
+        }
+        else if (AnimalRace.toString().equals("dog")){
+            HP+=5;
+        }
+        if (AnimalColor.toString().equals("green")){
+            speed+=2;
+        }
+        else if (AnimalColor.toString().equals("red")){
+            power+=4;
+        }
+
         System.out.println("Preparing "+AnimalColor.toString()+'_'+AnimalRace.toString());
     }
     private void setAnimalName(String animalName) {
@@ -42,6 +56,22 @@ public class Animal {
 
     public Race getAnimalRace() {
         return AnimalRace;
+    }
+
+    public int getHP() {
+        return HP;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public int getSkill() {
+        return skill;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 
     @Override
