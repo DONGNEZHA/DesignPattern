@@ -30,7 +30,7 @@ public abstract class Audience implements Cloneable {
     }
 
     public String setSex(String sex) {
-        return sex;
+        this.sex = sex;
     }
 
     public String getRace(){
