@@ -44,7 +44,7 @@ package Mediator;//抽象中介者
 
  }
 
- //具体同事类，普通人
+ //具体同事类1，普通人
  class ConcreteColleague1 extends Colleague {
 
      public ConcreteColleague1(Mediator mediator) {
@@ -61,7 +61,7 @@ package Mediator;//抽象中介者
 
  }
 
- //具体同事类，运动员
+ //具体同事类2，运动员
  class ConcreteColleague2 extends Colleague {
 
      public ConcreteColleague2(Mediator mediator) {
