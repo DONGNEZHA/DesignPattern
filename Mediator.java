@@ -7,7 +7,7 @@ package Mediator;//抽象中介者
 
          }
 
-         //抽象同事类，也就是运动员和普通人的抽象类
+         //抽象同事类，也就是运动员和普通动物的抽象类
  abstract class Colleague {
 
      protected Mediator mediator;
@@ -44,7 +44,7 @@ package Mediator;//抽象中介者
 
  }
 
- //具体同事类1，普通人
+ //具体同事类1，普通动物
  class ConcreteColleague1 extends Colleague {
 
      public ConcreteColleague1(Mediator mediator) {
@@ -56,7 +56,7 @@ package Mediator;//抽象中介者
      }
 
      public void notify(String message) {
-         System.out.println("普通人得到消息：" + message);
+         System.out.println("普通动物得到消息：" + message);
      }
 
  }
@@ -90,7 +90,7 @@ package Mediator;//抽象中介者
          mediator.setColleague1(colleague1);
          mediator.setColleague2(colleague2);
 
-         colleague1.send("普通人要求运动员参会");
+         colleague1.send("普通动物要求运动员参会");
          colleague2.send("运动员已经参会");
      }
 
