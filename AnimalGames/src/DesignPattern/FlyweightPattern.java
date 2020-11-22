@@ -108,7 +108,7 @@ public class FlyweightPattern {
         return minAge + (int) (Math.random() * maxAge);
     }
 
-    public static String getRandomSex() {
+    private static String getRandomSex() {
         if (((Math.random() * 100) % 2) == 1) {
             return "MALE";
         } else {
