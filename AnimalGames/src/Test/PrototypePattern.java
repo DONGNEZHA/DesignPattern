@@ -1,4 +1,4 @@
-package DesignPattern;
+package Test;
 
 import AniamlGames.Audience.Audience;
 import AniamlGames.Audience.AudienceCache;

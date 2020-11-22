@@ -1,6 +1,5 @@
-package DesignPattern;
+package Test;
 
-import AniamlGames.Audience.Audience;
 import AniamlGames.Audience.DetailAudience.AudienceAttribute.AttributeFactory;
 import AniamlGames.Audience.DetailAudience.BirdAudience;
 import AniamlGames.Audience.DetailAudience.CatAudience;
