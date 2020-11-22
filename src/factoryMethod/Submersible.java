@@ -7,4 +7,9 @@ public class Submersible extends Equipment{
         System.out.println("get a submersible");
         System.out.println("now you can join swim game");
     }
+
+    @Override
+    public String getEquipmentName() {
+        return "Submersible";
+    }
 }

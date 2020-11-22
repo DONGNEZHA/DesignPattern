@@ -1,6 +1,9 @@
-package abstractFactory;
+package Test;
 
-public class Main {
+import abstractFactory.Animal;
+import abstractFactory.AnimalStore;
+
+public class AbstractFactoryTest {
     public static void main(String[] args) {
         AnimalStore animalStore=new AnimalStore();
         Animal animal=null;

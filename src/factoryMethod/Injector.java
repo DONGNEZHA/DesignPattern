@@ -7,4 +7,11 @@ public class Injector extends Equipment{
         System.out.println("get a injector");
         System.out.println("now you can join air game");
     }
+
+
+
+    @Override
+    public String getEquipmentName() {
+        return "Injector";
+    }
 }

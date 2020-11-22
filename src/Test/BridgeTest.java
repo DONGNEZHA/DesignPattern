@@ -1,11 +1,13 @@
-package Bridge;
+package Test;
+
+import Bridge.*;
 import abstractFactory.Animal;
 import abstractFactory.AnimalStore;
 import factoryMethod.Equipment;
 import factoryMethod.IFactory;
 import factoryMethod.SubmersibleFactory;
 
-public class Main {
+public class BridgeTest {
     public static void main(String[] args) {
         //装备准备阶段
         EquipmentImplementor ei1=new PerfectEquip();

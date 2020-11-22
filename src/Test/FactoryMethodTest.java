@@ -1,6 +1,11 @@
-package factoryMethod;
+package Test;
 
-public class Main {
+import factoryMethod.Equipment;
+import factoryMethod.IFactory;
+import factoryMethod.InjectorFactory;
+import factoryMethod.SubmersibleFactory;
+
+public class FactoryMethodTest {
     public static void main(String[] args) {
         IFactory factory_1=new SubmersibleFactory();
         Equipment equipment_1=factory_1.createEquipment();

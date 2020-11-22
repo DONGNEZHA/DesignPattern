@@ -3,7 +3,7 @@ import abstractFactory.Animal;
 import factoryMethod.Equipment;
 
 public abstract class AbstractAnimalEquip {
-    EquipmentImplementor animalEquip;
+    private EquipmentImplementor animalEquip;
     public AbstractAnimalEquip(EquipmentImplementor animalEquip){
         this.animalEquip=animalEquip;
     }
