@@ -29,8 +29,8 @@ public abstract class Audience implements Cloneable {
         this.age = age;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public String setSex(String sex) {
+        return sex;
     }
 
     public String getRace(){
