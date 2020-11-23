@@ -1,4 +1,4 @@
-package TestCode;
+package Test;
 
 import Interpreter.DiscountPrice;
 import Interpreter.OriginalPrice;

@@ -1,4 +1,4 @@
-package TestCode;
+package Test;
 
 import Composite.Queue;
 import Animal.Animal;
