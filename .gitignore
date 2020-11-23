@@ -1,4 +1,3 @@
-.git
-.idea
-out
+.idea/
+out/
 DesignPattern.iml
