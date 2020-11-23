@@ -1,5 +1,5 @@
 package Visitor;
-
+//排行榜信息
 public class RankingList implements Element{
     private String item;
 

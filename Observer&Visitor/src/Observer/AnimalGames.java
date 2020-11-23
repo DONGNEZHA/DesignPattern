@@ -1,7 +1,9 @@
 package Observer;
 
 import java.util.ArrayList;
-
+/**
+ * 运动会实现主题，发布排名信息
+ */
 public class AnimalGames implements Subject{
     private ArrayList observers;
     private int ranking;
@@ -35,7 +37,9 @@ public class AnimalGames implements Subject{
         }
     }
 
-
+    /*
+     *  此方法用于AnimalGames收到的数据,并且调用更新使数据实时通知给观察者
+     */
     public void setRankings(int ranking){
         this.ranking = ranking;
         System.out.println("运动员排名为：" + ranking );
