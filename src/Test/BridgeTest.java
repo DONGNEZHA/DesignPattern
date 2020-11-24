@@ -1,14 +1,21 @@
 package Test;
 
 import Bridge.*;
-import abstractFactory.Animal;
-import abstractFactory.AnimalStore;
-import factoryMethod.Equipment;
-import factoryMethod.IFactory;
-import factoryMethod.SubmersibleFactory;
+import AbstractFactory_Animal.Animal;
+import AbstractFactory_Animal.AnimalStore;
+import Bridge.EquipDegree.BadEquip;
+import Bridge.EquipDegree.PerfectEquip;
+import Bridge.EquipmentValue.LegendEquipment;
+import Bridge.EquipmentValue.ordinaryEquipment;
+import Bridge.Interface.EquipmentImplementor;
+import FactoryMethod_Equipment.Equipment;
+import FactoryMethod_Equipment.Interface.IFactory;
+import FactoryMethod_Equipment.Factory.SubmersibleFactory;
 
 public class BridgeTest {
     public static void main(String[] args) {
+
+        System.out.println("Bridge Pattern");
         //装备准备阶段
         EquipmentImplementor ei1=new PerfectEquip();
         //创建普通品质装备
@@ -17,7 +24,7 @@ public class BridgeTest {
         //初始化Animal对象
         AnimalStore animalStore=new AnimalStore();
         Animal animal=null;
-        animal=animalStore.orderAnimal("GreenDog");
+        animal=animalStore.orderAnimal();
         //初始化Equipment对象
         IFactory factory_1=new SubmersibleFactory();
         Equipment equipment_1=factory_1.createEquipment();

@@ -1,6 +1,7 @@
 package Bridge;
-import abstractFactory.Animal;
-import factoryMethod.Equipment;
+import AbstractFactory_Animal.Animal;
+import Bridge.Interface.EquipmentImplementor;
+import FactoryMethod_Equipment.Equipment;
 
 public abstract class AbstractAnimalEquip {
     private EquipmentImplementor animalEquip;
