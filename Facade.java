@@ -1,78 +1,76 @@
 package Facade;
 
 //外观类
- class Facade {
+ public class Facade {
 
-    //被委托的对象
-    SubSystemA a;
-    SubSystemB b;
-    SubSystemC c;
-    SubSystemD d;
-
+    //被委托的对象,报名，排队，体检，检录
+    baoming a;
+    paidui b;
+    tijian c;
+    jianlu d;
+//外观设计模式创建新的报名，排队等过程
     public Facade() {
-        a = new SubSystemA();
-        b = new SubSystemB();
-        c = new SubSystemC();
-        d = new SubSystemD();
+        a = new baoming();
+        b = new paidui();
+        c = new tijian();
+        d = new jianlu();
     }
 
-    //提供给外部访问的方法
-    public void methodA() {
-        this.a.dosomethingA();
+    //提供给外部访问的方法，做这四个工作
+    public void method_baoming() { this.a.dosomething_baoming();}
+
+    public void method_paidui() {
+        this.b.dosomething_paidui();
     }
 
-    public void methodB() {
-        this.b.dosomethingB();
+    public void method_tijian() {
+        this.c.dosomething_tijian();
     }
 
-    public void methodC() {
-        this.c.dosomethingC();
-    }
-
-    public void methodD() {
-        this.d.dosomethingD();
+    public void method_jianlu() {
+        this.d.dosomething_jianlu();
     }
 
 
-//外观模式
-void method(){
-     methodA();
-     methodB();
-     methodC();
-     methodD();
+//外观设计的四个method
+public void method(){
+     method_baoming();
+     method_paidui();
+     method_tijian();
+     method_jianlu();
 }
  }
-//Subsystem子系统角色，从A到D
-class SubSystemA {
+//facade中四个子系统角色，及其输出
+class baoming {//报名类
 
-    public void dosomethingA() {
-        System.out.println("报名");
+    public void dosomething_baoming() {
+        System.out.println("baoming:method_baoming：运动员报名");
     }
 
 }
- class SubSystemB {
+ class paidui {//排队类
 
-    public void dosomethingB() {
-        System.out.println("排队");
+    public void dosomething_paidui() {
+        System.out.println("paidui:method_paidui:运动员参与排队");
     }
 
 }
- class SubSystemC {
+ class tijian {//体检类
 
-    public void dosomethingC() {
-        System.out.println("体检");
+    public void dosomething_tijian() {
+        System.out.println("tijian:method_tijian:运动员体检");
     }
 
 }
-class SubSystemD {
+class jianlu {//检录类
 
-    public void dosomethingD() {
-        System.out.println("检录");
+    public void dosomething_jianlu() {
+        System.out.println("jianlu:method_jianlu:运动员入场检录");
     }
 
 }
-//Client客户端
-class Client {
+//Client客户端与主函数
+ class Client {
 
     public static void main(String[] args) {
         Facade facade = new Facade();
