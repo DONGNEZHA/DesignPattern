@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-25T02:13:16.047Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="DLosT9hfe8pdBL_xIqeC" version="13.10.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-25T02:23:14.643Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="2jIpv2etzNuEAN8Y1px8" version="13.10.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="454" dy="2940" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -22,7 +22,7 @@
         <mxCell id="u7163vrVVrdo6Ww46eh3-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="u7163vrVVrdo6Ww46eh3-4">
           <mxGeometry y="60" width="160" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="u7163vrVVrdo6Ww46eh3-7" value="+setAnimalName():void&#xa;+getAnimalName():void&#xa;+updateView():void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="u7163vrVVrdo6Ww46eh3-4">
+        <mxCell id="u7163vrVVrdo6Ww46eh3-7" value="+setAnimalName(String):void&#xa;+getAnimalName():String&#xa;+updateView():void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="u7163vrVVrdo6Ww46eh3-4">
           <mxGeometry y="68" width="160" height="52" as="geometry" />
         </mxCell>
         <mxCell id="u7163vrVVrdo6Ww46eh3-8" value="transfer" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="u7163vrVVrdo6Ww46eh3-3" target="u7163vrVVrdo6Ww46eh3-4">
