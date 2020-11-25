@@ -1,4 +1,4 @@
-package Test;
+package Test.DetailTest;
 
 import AniamlGames.Audience.Audience;
 import AniamlGames.Audience.AudienceCache;

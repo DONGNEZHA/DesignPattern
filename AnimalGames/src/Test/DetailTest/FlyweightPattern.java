@@ -1,4 +1,4 @@
-package Test;
+package Test.DetailTest;
 
 import AniamlGames.Audience.DetailAudience.AudienceAttribute.AttributeFactory;
 import AniamlGames.Audience.DetailAudience.BirdAudience;
