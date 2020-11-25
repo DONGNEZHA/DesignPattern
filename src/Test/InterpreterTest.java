@@ -1,27 +1,27 @@
 package Test;
 
-import Interpreter.DiscountPrice;
+import Interpreter.ExchangePrice;
 import Interpreter.OriginalPrice;
 import Interpreter.Price;
 
 public class InterpreterTest {
     public void Test(){
         System.out.println("=================================================");
-        System.out.println("| +++++\tInterpreter\tè§£é‡Šå™¨æ¨¡å¼\tæµ‹è¯•\t+++++++ |");
+        System.out.println("| +++++\tInterpreter\t½âÊÍÆ÷Ä£Ê½\t²âÊÔ\t+++++++ |");
         Price price = new Price();
-        price.SetOriPrice(30.0f);
-        System.out.println("| Price:\tSetOriPrice:\tå·²è®¾ç½®ç¥¨åŸä»·ä¸º30.0f\t|");
-        price.SetDiscount(0.7f);
-        System.out.println("| Price:\tSetDiscount:\tå·²è®¾ç½®æŠ˜æ‰£ä¸º0.7f\t\t|");
+        price.SetOriPrice(10f);
+        System.out.println("| ÒÑÉèÖÃÔ­¼ÛÎª10\t\t\t\t\t\t\t\t|");
+        price.SetExchange(10f);
+        System.out.println("| ÒÑÉèÖÃ»ãÂÊÎª1£º10\t\t\t\t\t\t\t\t|");
         OriginalPrice oriPriceInterpreter = new OriginalPrice();
-        System.out.println("| OriginalPrice:\tè®¾ç½®OriginalPriceè§£é‡Šå™¨\t\t|");
-        float result = oriPriceInterpreter.Methord(price);
-        System.out.println("| OriginalPrice:\tMethord:\tåŸä»·ä¸ºï¼š" + result + "å…ƒ\t|");
-        DiscountPrice discountPriceInterpreter = new DiscountPrice();
-        System.out.println("| DiscountPrice:\tè®¾ç½®DiscountPriceè§£é‡Šå™¨\t\t|");
-        result = discountPriceInterpreter.Methord(price);
-        System.out.println("| DiscountPrice:\tMethord:\tæŠ˜æ‰£ä»·ä¸ºï¼š" + result + "å…ƒ\t|");
-        System.out.println("| +++++\tInterpreter\tè§£é‡Šå™¨æ¨¡å¼\tæµ‹è¯•å®Œæ¯•\t+++++++ |");
+        System.out.println("| ÉèÖÃOriginalPrice½âÊÍÆ÷£¬½âÎö¼Û¸ñ£¬Êä³öÔ­¼Û£º\t\t|");
+        float result = oriPriceInterpreter.Method(price);
+        System.out.println("| Ô­¼ÛÎª£º" + result + "\t\t\t\t\t\t\t\t\t|");
+        ExchangePrice discountPriceInterpreter = new ExchangePrice();
+        System.out.println("| ÉèÖÃDiscountPrice½âÊÍÆ÷£¬½âÎö¼Û¸ñ£¬Êä³ö×ª»»¼Û£º\t|");
+        result = discountPriceInterpreter.Method(price);
+        System.out.println("| ÕÛ¿Û¼ÛÎª£º" + result + "\t\t\t\t\t\t\t\t\t|");
+        System.out.println("| +++++\tInterpreter\t½âÊÍÆ÷Ä£Ê½\t²âÊÔÍê±Ï\t+++++++ |");
         System.out.println("=================================================");
     }
 }
