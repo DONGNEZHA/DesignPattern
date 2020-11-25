@@ -1,6 +1,5 @@
-package DesignPattern;
+package Test.DetailTest;
 
-import AniamlGames.Audience.Audience;
 import AniamlGames.Audience.DetailAudience.AudienceAttribute.AttributeFactory;
 import AniamlGames.Audience.DetailAudience.BirdAudience;
 import AniamlGames.Audience.DetailAudience.CatAudience;
@@ -108,7 +107,7 @@ public class FlyweightPattern {
         return minAge + (int) (Math.random() * maxAge);
     }
 
-    public static String getRandomSex() {
+    private static String getRandomSex() {
         if (((Math.random() * 100) % 2) == 1) {
             return "MALE";
         } else {

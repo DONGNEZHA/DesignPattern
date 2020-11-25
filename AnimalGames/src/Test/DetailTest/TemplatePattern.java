@@ -1,4 +1,4 @@
-package DesignPattern;
+package Test.DetailTest;
 
 import AniamlGames.Games.DetailGame.FourHundredMetersSwimming;
 import AniamlGames.Games.DetailGame.OneHundredMetersRunning;
