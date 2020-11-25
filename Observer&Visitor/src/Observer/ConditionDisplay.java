@@ -1,27 +1,27 @@
 package Observer;
-/*
- *  布告板上的状态显示
- */
-public class ConditionDisplay implements Observer,DisplayElement{
-    private int ranking;
-    private Subject animalGames;
 
-    public ConditionDisplay(Subject animalGames) {
-        // 构造时需要间主题/被观察者对象作为注册之用
-        this.animalGames = animalGames;
-        animalGames.registerObserver(this);
+import java.util.ArrayList;
+import java.util.List;
+
+public class ConditionDisplay implements Subject{
+    private List<Observer> OBList = new ArrayList<Observer>();
+
+
+    @Override
+    public void registerObserver(Observer observer) {
+        OBList.add(observer);
     }
 
     @Override
-    public void display() {
-        // 将数据显示在布告板上
-        System.out.println("显示该运动员排名为：" + ranking );
+    public void removeObserver(Observer observer) {
+        OBList.remove(observer);
+
     }
 
     @Override
-    public void update(int ranking) {
-        // 接受来自主题/被观察者的数据
-        this.ranking = ranking;
-        display();
+    public void notifyObserver(int rank[]) {
+        for(Observer observer:OBList){
+            observer.update(rank);
+        }
     }
 }
