@@ -25,6 +25,8 @@ public class AthleteFactory {
             athlete.setStrength(99);
             athlete.setSkill(108);
         }
+        athlete.setRank(new int[]{0, 0, 0});
+        athlete.setScore(new double[]{0, 0, 0});
         athlete.setAnimalState(new StateGood());
         return athlete;
     }

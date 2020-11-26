@@ -1,8 +1,12 @@
 package Proxy;
 
+import Facade.Facade;
+
 public class RealScoreSheet implements ScoreSheet {
     @Override
     public void printScoreSheet() {
-        System.out.println("成绩单内容");
+
+        Facade facade = new Facade();
+        facade.method();
     }
 }

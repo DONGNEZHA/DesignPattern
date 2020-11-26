@@ -5,17 +5,20 @@ import Builder.GamesBuilder;
 import Command_Memento.CCommandFn;
 import Composite.Menu;
 import Composite.MenuOption;
+import Facade.Facade;
 import Iterator.AthleteContainer;
 import Iterator.GameContainer;
 import Mediator.CMediatorFn;
+import Proxy.ProxyScoreSheet;
+import Proxy.ScoreSheet;
 import SimpleFactory.Athlete;
 import SimpleFactory.AthleteFactory;
 import State.StateGood;
 import State.StatePerfect;
-import State.StateTired;
 import Template_Strategy.FourHundredMetersSwimming;
 import Template_Strategy.OneHundredMetersRunning;
 import Template_Strategy.OneThousandMetersRunning;
+import Visitor.CVisitorFn;
 
 import java.util.Scanner;
 
@@ -23,7 +26,7 @@ public class AnimalSportMeeting {
 
     //创建 Singleton.AnimalSportMeeting 的一个对象
     private static AnimalSportMeeting instance = new AnimalSportMeeting();
-    //成员变量
+
     private Athlete player;
 
     //让构造函数为 private，这样该类就不会被实例化
@@ -67,6 +70,9 @@ public class AnimalSportMeeting {
         for (Game game : GameContainer.getInstance().getGames()) {
             game.showGameInfo();
         }
+        //运动员检入
+        Facade facade = new Facade();
+        facade.method();
         //运动会正式开始
         //设置测试用菜单
         Menu rootMenu = new Menu("大厅选择");
@@ -95,6 +101,7 @@ public class AnimalSportMeeting {
         // 菜单以及选择返回
         rootMenu.printMenu();
         int i = input.nextInt();
+        int gameVisited = 0;
         while (i != 0) {
             switch (i) {
                 case 1: {
@@ -102,22 +109,37 @@ public class AnimalSportMeeting {
                     Game game;
                     switch (input.nextInt()) {
                         case 1:
-                            game = (OneHundredMetersRunning)(gameMenu.getMenu().get(0).option);
+                            game = (OneHundredMetersRunning) (gameMenu.getMenu().get(0).option);
+                            if (game.isVisited()) {
+                                System.out.println("该项目已结束，请参加其他项目！");
+                                break;
+                            }
                             game.gamePreparation();
                             game.gameStart();
                             game.gameEnd();
+                            ++gameVisited;
                             break;
                         case 2:
-                            game = (OneThousandMetersRunning)(gameMenu.getMenu().get(1).option);
+                            game = (OneThousandMetersRunning) (gameMenu.getMenu().get(1).option);
+                            if (game.isVisited()) {
+                                System.out.println("该项目已结束，请参加其他项目！");
+                                break;
+                            }
                             game.gamePreparation();
                             game.gameStart();
                             game.gameEnd();
+                            ++gameVisited;
                             break;
                         case 3:
-                            game = (FourHundredMetersSwimming)(gameMenu.getMenu().get(2).option);
+                            game = (FourHundredMetersSwimming) (gameMenu.getMenu().get(2).option);
+                            if (game.isVisited()) {
+                                System.out.println("该项目已结束，请参加其他项目！");
+                                break;
+                            }
                             game.gamePreparation();
                             game.gameStart();
                             game.gameEnd();
+                            ++gameVisited;
                             break;
                         case 0:
                             run_100.getLast().printMenu();
@@ -126,10 +148,13 @@ public class AnimalSportMeeting {
                         default:
                             break;
                     }
+                    if (gameVisited == 3) {
+                        System.out.println("");
+                    }
                     break;
                 }
                 case 2:
-                    CCommandFn CCommandFn = (CCommandFn)rootMenu.getMenu().get(1).option;
+                    CCommandFn CCommandFn = (CCommandFn) rootMenu.getMenu().get(1).option;
                     try {
                         CCommandFn.CommandFn();
                     } catch (InterruptedException e) {
@@ -151,16 +176,33 @@ public class AnimalSportMeeting {
                     CMediatorFn.getInstance().MediateFn();
                     break;
                 case 3:
+                    System.out.println("输入要询问的运动员编号：");
+                    int n = input.nextInt() - 1;
+                    System.out.println("选择要询问的比赛 [1]100m赛跑 [2]1000m赛跑 [3]400m游泳");
+                    int m = input.nextInt();
+                    Game game = GameContainer.getInstance().get(m - 1);
+                    if (!game.isVisited()) {
+                        System.out.println("该比赛尚未开始！");
+                        break;
+                    }
+                    CVisitorFn.VisitorFn(n, game);
                     break;
                 case 4:
                     break;
                 case 5:
+                    ScoreSheet proxyScoreSheet = new ProxyScoreSheet();
+                    proxyScoreSheet.printScoreSheet();
                     break;
                 case 0:
                     break;
                 default:
                     break;
             }
+            if (gameVisited == 3) {
+                System.out.println("所有比赛均已结束！");
+                break;
+            }
+            rootMenu.printMenu();
             i = input.nextInt();
         }
     }

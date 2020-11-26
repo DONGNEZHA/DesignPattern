@@ -1,6 +1,6 @@
 package Composite;
 
-public class MenuOption extends Component{
+public class MenuOption extends Component {
     // 把选项绑一个string做名字用的结构体
     private String name;
     private Menu lastMenu;
@@ -18,7 +18,7 @@ public class MenuOption extends Component{
 
     @Override
     public void add(Component component) {
-         super.add(component);
+        super.add(component);
     }
 
     @Override
@@ -33,8 +33,8 @@ public class MenuOption extends Component{
     }
 
     @Override
-    public void setLastMenu(Menu lastMenu){
-        this.lastMenu=lastMenu;
+    public void setLastMenu(Menu lastMenu) {
+        this.lastMenu = lastMenu;
     }
 
 }

@@ -1,9 +1,5 @@
 package Interpreter;
 
-import Interpreter.ExchangePrice;
-import Interpreter.OriginalPrice;
-import Interpreter.Price;
-
 public class InterpreterTest {
     public static void main(String[] args) {
         System.out.println("=================================================");

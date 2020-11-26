@@ -36,7 +36,7 @@ public class Menu extends Component {
             i++;
             System.out.println(i + " ----- " + item.getName());
         }
-        if(lastMenu!=null) System.out.println("0 ----- 回退");
+        if (lastMenu != null) System.out.println("0 ----- 回退");
         else System.out.println("0 ----- 退出");
     }
 
@@ -46,8 +46,8 @@ public class Menu extends Component {
     }
 
     @Override
-    public void setLastMenu(Menu lastMenu){
-        this.lastMenu=lastMenu;
+    public void setLastMenu(Menu lastMenu) {
+        this.lastMenu = lastMenu;
     }
 
     public ArrayList<Component> getMenu() {

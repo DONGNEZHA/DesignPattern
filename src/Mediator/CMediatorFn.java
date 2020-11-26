@@ -1,18 +1,18 @@
 package Mediator;
 
 
-import Command_Memento.CCommandFn;
-
 public class CMediatorFn {
     //单例模式
     private static CMediatorFn instance = new CMediatorFn();
-    private CMediatorFn() { }
+
+    private CMediatorFn() {
+    }
+
     public static CMediatorFn getInstance() {
         return instance;
     }
 
     public void MediateFn() {
-
 
 
         ConcreteMediator mediator = new ConcreteMediator();

@@ -1,10 +1,9 @@
 package State;
 
-import java.util.Random;
-
 public class StatePerfect extends AnimalState {
     @Override
-    public void drinkCoffee() { }
+    public void drinkCoffee() {
+    }
 
     @Override
     public void attendGame() {

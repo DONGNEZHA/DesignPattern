@@ -50,6 +50,7 @@ public class OneThousandMetersRunning extends Game {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        setVisited(true);
         System.out.println("OneThousandMetersRunning Game Finished!");
         System.out.println("1000m赛跑最终成绩：");
         for (int i = 1; i <= 8; ++i) {
@@ -59,7 +60,7 @@ public class OneThousandMetersRunning extends Game {
         System.out.println("亚军：" + getAthleteLists().get(getRankByRank()[1]).getAnimalName());
         System.out.println("季军：" + getAthleteLists().get(getRankByRank()[2]).getAnimalName());
         System.out.println("你的名次：" + getRankByNO()[0]);
-        ScoreSubject.getInstance().notifyObserver(2, getRankByNO(), getScore());
+        ScoreSubject.getInstance().notifyObserver(1, getRankByNO(), getScore());
         if (getRankByNO()[0] >= 6) {
             switch (getAthleteLists().get(0).getAnimalState().toString()) {
                 case "StatePerfect":
@@ -92,10 +93,10 @@ public class OneThousandMetersRunning extends Game {
     @Override
     public void getValue(int no) {
         Random rand = new Random();
-        double random = (rand.nextInt(20) + 90);
+        double random = (rand.nextInt(2000) + 9000);
         Athlete athlete = getAthleteLists().get(no);
         double value = (athlete.getSpeed() * 1.1 + athlete.getPhysical() * 1.3 + athlete.getStrength() * 1 + athlete.getSkill() * 1.2) / athlete.getAnimalState().getState();
-        double time = value * 0.411288 * random / 100;
+        double time = value * 0.411288 * random / 10000;
         getScore()[no] = time;
     }
 

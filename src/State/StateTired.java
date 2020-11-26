@@ -1,7 +1,5 @@
 package State;
 
-import java.util.Random;
-
 public class StateTired extends AnimalState {
     @Override
     public void drinkCoffee() {
@@ -9,7 +7,8 @@ public class StateTired extends AnimalState {
     }
 
     @Override
-    public void attendGame() { }
+    public void attendGame() {
+    }
 
     @Override
     public double getState() {

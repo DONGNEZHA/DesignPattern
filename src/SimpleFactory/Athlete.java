@@ -2,8 +2,6 @@ package SimpleFactory;
 
 import State.AnimalState;
 
-import java.util.Map;
-
 public class Athlete {
     private String AnimalName;
     private Race AnimalRace;
@@ -16,7 +14,8 @@ public class Athlete {
     private int[] Rank;
     private double[] Score;
 
-    public Athlete() { }
+    public Athlete() {
+    }
 
     private Athlete(Race race, Color color) {
         AnimalRace = race;

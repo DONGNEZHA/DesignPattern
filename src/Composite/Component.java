@@ -16,9 +16,11 @@ public abstract class Component {
         System.out.println("");
     }
 
-    public void setLastMenu(Menu lastMenu){
+    public void setLastMenu(Menu lastMenu) {
         System.out.println("");
-    };
+    }
+
+    ;
 }
 
 

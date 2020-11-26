@@ -11,8 +11,8 @@ public class AthleteObserve implements Observer {
     }
 
     @Override
-    public void update(int game, int rank, double Score) {
+    public void update(int game, int rank, double score) {
         AthleteContainer.getInstance().get(AthleteNum).getRank()[game] = rank;
-        AthleteContainer.getInstance().get(AthleteNum).getScore()[game] = Score;
+        AthleteContainer.getInstance().get(AthleteNum).getScore()[game] = score;
     }
 }

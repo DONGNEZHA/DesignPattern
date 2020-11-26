@@ -3,10 +3,10 @@ package Adapt;
 import java.util.Scanner;
 
 public class AliPay {
-    private int type,money;
-    Scanner scan=new Scanner(System.in);
+    Scanner scan = new Scanner(System.in);
+    private int type, money;
 
-    public void specialPay(){
+    public void specialPay() {
         System.out.println("你选择了使用Alipay支付，请选择你使用的付款方式：\n1、正常付款  2、花呗付款");
         type = scan.nextInt();
         if (type == 1) {

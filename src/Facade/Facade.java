@@ -18,7 +18,9 @@ public class Facade {
     }
 
     //提供给外部访问的方法，做这四个工作
-    public void method_Signup() { this.a.dosomething(); }
+    public void method_Signup() {
+        this.a.dosomething();
+    }
 
     public void method_LineUp() {
         this.b.dosomething();

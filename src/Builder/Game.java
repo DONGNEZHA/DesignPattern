@@ -16,6 +16,7 @@ public abstract class Game {
     private double[] score = new double[8];
     private int[] rankByNO = new int[8];
     private int[] rankByRank = new int[8];
+    private boolean isVisited;
 
     public Game(String Name) {
         name = Name;
@@ -39,6 +40,7 @@ public abstract class Game {
         for (int i = 0; i < 8; ++i) {
             addAthlete(AthleteContainer.getInstance().get(i));
         }
+        isVisited = false;
     }
 
     public void addAthlete(Athlete athlete) {
@@ -102,4 +104,11 @@ public abstract class Game {
         System.out.println("本场裁判：" + judge.getJudgeName());
     }
 
+    public boolean isVisited() {
+        return isVisited;
+    }
+
+    public void setVisited(boolean visited) {
+        isVisited = visited;
+    }
 }

@@ -1,8 +1,6 @@
 package Command_Memento;
 
-import Decorator.Drink;
-
-public class Memento extends Drink {
+public class Memento {
     private String condiment;
 
     public Memento(String condiment) {

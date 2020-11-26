@@ -7,7 +7,10 @@ import java.util.Scanner;
 public class CCommandFn {
     //单例模式
     private static CCommandFn instance = new CCommandFn();
-    private CCommandFn() { }
+
+    private CCommandFn() {
+    }
+
     public static CCommandFn getInstance() {
         return instance;
     }

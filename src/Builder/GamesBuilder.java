@@ -10,7 +10,8 @@ public class GamesBuilder {
     //单例模式
     private static GamesBuilder instance = new GamesBuilder();
 
-    private GamesBuilder() { }
+    private GamesBuilder() {
+    }
 
     public static GamesBuilder getInstance() {
         return instance;
