@@ -101,7 +101,9 @@ public abstract class Game {
         for (int i = 1; i <= 8; ++i) {
             System.out.println("参赛编号：" + i + "  姓名：" + athleteLists.get(i - 1).getAnimalName());
         }
-        System.out.println("本场裁判：" + judge.getJudgeName());
+        if (judge != null) {
+            System.out.println("本场裁判：" + judge.getJudgeName());
+        }
     }
 
     public boolean isVisited() {

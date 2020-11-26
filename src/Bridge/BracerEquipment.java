@@ -3,14 +3,16 @@ package Bridge;
 import FactoryMethod.Equipment;
 import SimpleFactory.Athlete;
 
-public class LegendEquipment extends AbstractAnimalEquip {
-    public LegendEquipment(EquipmentImplementor animalEquip) {
+public class BracerEquipment extends AbstractAnimalEquip {
+    public BracerEquipment(EquipmentImplementor animalEquip) {
         super(animalEquip);
     }
 
     @Override
     public void EquipEquipment(Athlete animal, Equipment equipment) {
         super.EquipEquipment(animal, equipment);
+        animal.setStrength(animal.getStrength() + 3);
+        animal.setSkill(animal.getSkill() + 2);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package Builder;
 
+import ChainOfResponsibility.Boxing;
 import Iterator.GameContainer;
 import Template_Strategy.FourHundredMetersSwimming;
 import Template_Strategy.OneHundredMetersRunning;
@@ -21,5 +22,6 @@ public class GamesBuilder {
         GameContainer.getInstance().add(new OneHundredMetersRunning("100m赛跑"));
         GameContainer.getInstance().add(new OneThousandMetersRunning("1000m赛跑"));
         GameContainer.getInstance().add(new FourHundredMetersSwimming("400m游泳"));
+        GameContainer.getInstance().add(new Boxing("拳击赛"));
     }
 }

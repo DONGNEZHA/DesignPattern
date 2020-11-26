@@ -1,15 +1,20 @@
 package FactoryMethod;
 
-public class Submersible extends Equipment {
-    //潜水器，功能可以潜水
+import SimpleFactory.Athlete;
+
+public class SportShoes extends Equipment {
     @Override
     public void function() {
         System.out.println("get a submersible");
         System.out.println("now you can join swim game");
     }
 
+    public SportShoes(Athlete owner) {
+        super(owner);
+    }
+
     @Override
     public String getEquipmentName() {
-        return "Submersible";
+        return "SportShoes";
     }
 }

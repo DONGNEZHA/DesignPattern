@@ -12,7 +12,6 @@ public abstract class AbstractAnimalEquip {
 
     public void EquipEquipment(Athlete animal, Equipment equipment) {
         this.animalEquip.equip(animal, equipment);
-
     }
 
     public abstract int getEquipmentValue();

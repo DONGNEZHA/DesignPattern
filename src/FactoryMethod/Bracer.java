@@ -1,6 +1,8 @@
 package FactoryMethod;
 
-public class Injector extends Equipment {
+import SimpleFactory.Athlete;
+
+public class Bracer extends Equipment {
     //喷射器，功能可以飞翔
     @Override
     public void function() {
@@ -8,8 +10,12 @@ public class Injector extends Equipment {
         System.out.println("now you can join air game");
     }
 
+    public Bracer(Athlete owner) {
+        super(owner);
+    }
+
     @Override
     public String getEquipmentName() {
-        return "Injector";
+        return "Bracer";
     }
 }

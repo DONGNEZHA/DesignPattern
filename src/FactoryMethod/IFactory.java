@@ -1,5 +1,7 @@
 package FactoryMethod;
 
+import SimpleFactory.Athlete;
+
 public interface IFactory {
-    Equipment createEquipment();
+    Equipment createEquipment(Athlete owner);
 }

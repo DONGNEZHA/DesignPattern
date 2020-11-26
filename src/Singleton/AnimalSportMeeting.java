@@ -1,11 +1,17 @@
 package Singleton;
 
+import Bridge.*;
 import Builder.Game;
 import Builder.GamesBuilder;
+import ChainOfResponsibility.Boxing;
 import Command_Memento.CCommandFn;
 import Composite.Menu;
 import Composite.MenuOption;
 import Facade.Facade;
+import FactoryMethod.BracerFactory;
+import FactoryMethod.Equipment;
+import FactoryMethod.SportShoes;
+import FactoryMethod.SportShoesFactory;
 import Iterator.AthleteContainer;
 import Iterator.GameContainer;
 import Mediator.CMediatorFn;
@@ -83,11 +89,13 @@ public class AnimalSportMeeting {
         MenuOption run_100 = new MenuOption("100米跑", GameContainer.getInstance().get(0));
         MenuOption run_1000 = new MenuOption("1000米跑", GameContainer.getInstance().get(1));
         MenuOption swim_400 = new MenuOption("400米游泳", GameContainer.getInstance().get(2));
+        MenuOption boxing = new MenuOption("拳击", GameContainer.getInstance().get(3));
         // 向比赛菜单中添加三个选项
         // 可在此处创建三个比赛实例替换 Add 中参数 element  后续同理
         gameMenu.add(run_100);
         gameMenu.add(run_1000);
         gameMenu.add(swim_400);
+        gameMenu.add(boxing);
         //饮品台
         MenuOption drinkTable = new MenuOption("饮品台", CCommandFn.getInstance());
         MenuOption queryRank = new MenuOption("询问成绩", element);
@@ -132,6 +140,17 @@ public class AnimalSportMeeting {
                             break;
                         case 3:
                             game = (FourHundredMetersSwimming) (gameMenu.getMenu().get(2).option);
+                            if (game.isVisited()) {
+                                System.out.println("该项目已结束，请参加其他项目！");
+                                break;
+                            }
+                            game.gamePreparation();
+                            game.gameStart();
+                            game.gameEnd();
+                            ++gameVisited;
+                            break;
+                        case 4:
+                            game = (Boxing) (gameMenu.getMenu().get(3).option);
                             if (game.isVisited()) {
                                 System.out.println("该项目已结束，请参加其他项目！");
                                 break;
@@ -188,6 +207,22 @@ public class AnimalSportMeeting {
                     CVisitorFn.VisitorFn(n, game);
                     break;
                 case 4:
+                    System.out.println("欢迎光临运动装备专卖店！");
+                    System.out.println("选购心仪的装备 [1]运动跑鞋 [2]运动护腕");
+                    int k = input.nextInt();
+                    if (k == 1) {
+                        SportShoesFactory sportShoesFactory = new SportShoesFactory();
+                        Equipment sportShoes = sportShoesFactory.createEquipment(player);
+                        EquipmentImplementor ei = new PerfectEquip();
+                        AbstractAnimalEquip equipment = new SportShoesEquipment(ei);
+                        equipment.EquipEquipment(player, sportShoes);
+                    } else if (k == 2) {
+                        BracerFactory bracerFactory = new BracerFactory();
+                        Equipment bracer = bracerFactory.createEquipment(player);
+                        EquipmentImplementor ei = new PerfectEquip();
+                        AbstractAnimalEquip equipment = new BracerEquipment(ei);
+                        equipment.EquipEquipment(player, bracer);
+                    }
                     break;
                 case 5:
                     ScoreSheet proxyScoreSheet = new ProxyScoreSheet();
