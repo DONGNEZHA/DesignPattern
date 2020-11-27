@@ -3,8 +3,6 @@ package Singleton;
 import Bridge.*;
 import Builder.Game;
 import Builder.GamesBuilder;
-import Prototpye_Flyweight.CPrototypeFn;
-import Template_Strategy.Boxing;
 import Command_Memento.CCommandFn;
 import Composite.Menu;
 import Composite.MenuOption;
@@ -15,12 +13,16 @@ import FactoryMethod.SportShoesFactory;
 import Iterator.AthleteContainer;
 import Iterator.GameContainer;
 import Mediator.CMediatorFn;
+import Prototpye_Flyweight.CPrototypeFn;
 import Proxy.ProxyScoreSheet;
 import Proxy.ScoreSheet;
+import Servant.Preparation;
+import Servant.Worker;
 import SimpleFactory.Athlete;
 import SimpleFactory.AthleteFactory;
 import State.StateGood;
 import State.StatePerfect;
+import Template_Strategy.Boxing;
 import Template_Strategy.FourHundredMetersSwimming;
 import Template_Strategy.OneHundredMetersRunning;
 import Template_Strategy.OneThousandMetersRunning;
@@ -36,12 +38,15 @@ public class AnimalSportMeeting {
     private Athlete player;
 
     //让构造函数为 private，这样该类就不会被实例化
-    private AnimalSportMeeting() {
-    }
+    private AnimalSportMeeting() { }
 
-    //获取唯一可用的对象
+    private static class SingletonHolder {
+        // 静态初始化器，有JVM来保证线程安全
+        private static AnimalSportMeeting instance = new AnimalSportMeeting();
+    }
     public static AnimalSportMeeting getInstance() {
-        return instance;
+        return SingletonHolder.instance;
+
     }
 
     //测试信息
@@ -124,7 +129,8 @@ public class AnimalSportMeeting {
                                 System.out.println("该项目已结束，请参加其他项目！");
                                 break;
                             }
-                            game.gamePreparation();
+                            Worker worker1 = new Worker();
+                            worker1.prepare((Preparation) game);
                             game.gameStart();
                             game.gameEnd();
                             ++gameVisited;
@@ -135,7 +141,8 @@ public class AnimalSportMeeting {
                                 System.out.println("该项目已结束，请参加其他项目！");
                                 break;
                             }
-                            game.gamePreparation();
+                            Worker worker2 = new Worker();
+                            worker2.prepare((Preparation) game);
                             game.gameStart();
                             game.gameEnd();
                             ++gameVisited;
@@ -146,7 +153,8 @@ public class AnimalSportMeeting {
                                 System.out.println("该项目已结束，请参加其他项目！");
                                 break;
                             }
-                            game.gamePreparation();
+                            Worker worker3 = new Worker();
+                            worker3.prepare((Preparation) game);
                             game.gameStart();
                             game.gameEnd();
                             ++gameVisited;
@@ -157,7 +165,6 @@ public class AnimalSportMeeting {
                                 System.out.println("该项目已结束，请参加其他项目！");
                                 break;
                             }
-                            game.gamePreparation();
                             game.gameStart();
                             game.gameEnd();
                             ++gameVisited;

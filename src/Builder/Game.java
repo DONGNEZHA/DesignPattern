@@ -47,8 +47,6 @@ public abstract class Game {
         athleteLists.add(athlete);
     }
 
-    public abstract void gamePreparation();
-
     public abstract void gameStart();
 
     public abstract void gameEnd();

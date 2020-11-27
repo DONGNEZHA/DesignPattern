@@ -2,19 +2,15 @@ package Template_Strategy;
 
 import Builder.Game;
 import ChainOfResponsibility.AthleteFighters;
+import Servant.Preparation;
 
-public class Boxing extends Game {
+public class Boxing extends Game implements Preparation {
 
     private AthleteFighters athleteFighters;
 
     public Boxing(String Name) {
         super(Name);
         athleteFighters = new AthleteFighters();
-    }
-
-    @Override
-    public void gamePreparation() {
-
     }
 
     @Override
@@ -29,6 +25,11 @@ public class Boxing extends Game {
 
     @Override
     public void getValue(int no) {
+
+    }
+
+    @Override
+    public void gamePreparation() {
 
     }
 }

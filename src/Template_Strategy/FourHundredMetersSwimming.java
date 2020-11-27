@@ -2,6 +2,7 @@ package Template_Strategy;
 
 import Builder.Game;
 import Observer.ScoreSubject;
+import Servant.Preparation;
 import SimpleFactory.Athlete;
 import State.StateGood;
 import State.StatePerfect;
@@ -9,7 +10,7 @@ import State.StateTired;
 
 import java.util.Random;
 
-public class FourHundredMetersSwimming extends Game {
+public class FourHundredMetersSwimming extends Game implements Preparation {
     public FourHundredMetersSwimming(String Name) {
         super(Name);
     }
