@@ -183,25 +183,28 @@ public class AnimalSportMeeting {
                 }
                 case 2:
                     CCommandFn CCommandFn = (CCommandFn) rootMenu.getMenu().get(1).option;
+                    boolean ifDrink=false;
                     try {
-                        CCommandFn.CommandFn();
+                        ifDrink=CCommandFn.CommandFn();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("在饮品台休息了一会儿，状态提升！");
-                    switch (player.getAnimalState().toString()) {
-                        case "StatePerfect":
-                            break;
-                        case "StateGood":
-                            player.setAnimalState(new StatePerfect());
-                            break;
-                        case "StateTired":
-                            player.setAnimalState(new StateGood());
-                            break;
-                        default:
-                            break;
+                    if(ifDrink){
+                        System.out.println("在饮品台休息了一会儿，状态提升！");
+                        switch (player.getAnimalState().toString()) {
+                            case "StatePerfect":
+                                break;
+                            case "StateGood":
+                                player.setAnimalState(new StatePerfect());
+                                break;
+                            case "StateTired":
+                                player.setAnimalState(new StateGood());
+                                break;
+                            default:
+                                break;
+                        }
+                        CMediatorFn.getInstance().MediateFn();
                     }
-                    CMediatorFn.getInstance().MediateFn();
                     break;
                 case 3:
                     System.out.println("输入要询问的运动员编号：");

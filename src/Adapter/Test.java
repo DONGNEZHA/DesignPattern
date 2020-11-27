@@ -1,4 +1,4 @@
-package Adapt;
+package Adapter;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Test {
         type = scan.nextInt();
         switch (type) {
             case 1: {
-                new AliAdapt().pay();
+                new AliAdapter().pay();
                 break;
             }
             case 2: {
