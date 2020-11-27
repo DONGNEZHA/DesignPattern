@@ -11,10 +11,6 @@ public class Boxing extends Game {
         athleteFighters = new AthleteFighters();
     }
 
-    @Override
-    public void gamePreparation() {
-
-    }
 
     @Override
     public void gameStart() {
