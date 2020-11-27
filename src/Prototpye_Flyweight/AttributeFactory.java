@@ -12,7 +12,7 @@ public class AttributeFactory {
             = new HashMap<>();
     private static final HashMap<String, Audience> catAudienceMap
             = new HashMap<>();
-    private static final HashMap<String, Audience> birdAudienceMap
+    private static final HashMap<String, Audience> bearAudienceMap
             = new HashMap<>();
 
     public static Audience setDogAudience(String color) {
@@ -37,12 +37,12 @@ public class AttributeFactory {
         return catAudience;
     }
 
-    public static Audience setBirdAudience(String color) {
-        BearAudience bearAudience = (BearAudience) birdAudienceMap.get(color);
+    public static Audience setBearAudience(String color) {
+        BearAudience bearAudience = (BearAudience) bearAudienceMap.get(color);
 
         if (bearAudience == null) {
             bearAudience = new BearAudience(color);
-            birdAudienceMap.put(color, bearAudience);
+            bearAudienceMap.put(color, bearAudience);
             System.out.println("Here is the first " + color + " BearAudience");
         }
         return bearAudience;

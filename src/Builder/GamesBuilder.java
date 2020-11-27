@@ -1,6 +1,6 @@
 package Builder;
 
-import ChainOfResponsibility.Boxing;
+import Template_Strategy.Boxing;
 import Iterator.GameContainer;
 import Template_Strategy.FourHundredMetersSwimming;
 import Template_Strategy.OneHundredMetersRunning;

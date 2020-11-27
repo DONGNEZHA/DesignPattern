@@ -3,14 +3,14 @@ package Singleton;
 import Bridge.*;
 import Builder.Game;
 import Builder.GamesBuilder;
-import ChainOfResponsibility.Boxing;
+import Prototpye_Flyweight.CPrototypeFn;
+import Template_Strategy.Boxing;
 import Command_Memento.CCommandFn;
 import Composite.Menu;
 import Composite.MenuOption;
 import Facade.Facade;
 import FactoryMethod.BracerFactory;
 import FactoryMethod.Equipment;
-import FactoryMethod.SportShoes;
 import FactoryMethod.SportShoesFactory;
 import Iterator.AthleteContainer;
 import Iterator.GameContainer;
@@ -50,7 +50,7 @@ public class AnimalSportMeeting {
     }
 
     //流程控制器
-    public void flowController() {
+    public void flowController() throws CloneNotSupportedException {
         Scanner input = new Scanner(System.in);
         //创建玩家
         System.out.println("请输入你的名字：");
@@ -101,11 +101,13 @@ public class AnimalSportMeeting {
         MenuOption queryRank = new MenuOption("询问成绩", element);
         MenuOption buyEquipment = new MenuOption("买装备", element);
         MenuOption printRank = new MenuOption("打印成绩单", element);
+        MenuOption meetAudience = new MenuOption("粉丝见面会", element);
         rootMenu.add(gameMenu);
         rootMenu.add(drinkTable);
         rootMenu.add(queryRank);
         rootMenu.add(buyEquipment);
         rootMenu.add(printRank);
+        rootMenu.add(meetAudience);
         // 菜单以及选择返回
         rootMenu.printMenu();
         int i = input.nextInt();
@@ -228,6 +230,12 @@ public class AnimalSportMeeting {
                     ScoreSheet proxyScoreSheet = new ProxyScoreSheet();
                     proxyScoreSheet.printScoreSheet();
                     break;
+                case 6:
+                    try {
+                        CPrototypeFn.PrototypeFn();
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
                 case 0:
                     break;
                 default:
