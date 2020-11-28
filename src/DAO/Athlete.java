@@ -5,7 +5,7 @@ public class Athlete {
     private String name;
     private int rollNo;
 
-    Athlete(String name, int rollNo){
+    Athlete(String name, int rollNo) {
         this.name = name;
         this.rollNo = rollNo;
     }

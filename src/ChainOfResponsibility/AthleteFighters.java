@@ -45,9 +45,9 @@ public class AthleteFighters {
                 System.out.println("第" + i + "轮：" + presentFighter.getAnimal().getAnimalName()
                         + " vs " + nextFighter.getAnimal().getAnimalName() + "  胜者："
                         + nextFighter.getAnimal().getAnimalName());
+                if (i == 7) break;
                 presentFighter = (AthleteFighter) presentFighter.getNextAbstractOpponent();
                 presentFighter.setNextAbstractOpponent(athleteFighters.get(++i));
-                if (i == 7) break;
             }
         }
         System.out.println("冠军是" + presentFighter.getAnimal().getAnimalName() + '!');

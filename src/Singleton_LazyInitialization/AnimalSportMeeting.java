@@ -33,21 +33,17 @@ import java.util.Scanner;
 public class AnimalSportMeeting {
 
     //创建 Singleton.AnimalSportMeeting 的一个对象
-    private static AnimalSportMeeting instance = new AnimalSportMeeting();
 
     private Athlete player;
 
     //让构造函数为 private，这样该类就不会被实例化
-    private AnimalSportMeeting() { }
+    private AnimalSportMeeting() {
+    }
 
     public static AnimalSportMeeting getInstance() {
         return SingletonHolder.instance;
     }
 
-    private static class SingletonHolder {
-        // 静态初始化器，有JVM来保证线程安全
-        private static AnimalSportMeeting instance = new AnimalSportMeeting();
-    }
     //测试信息
     public void showMessage() {
         System.out.println("ASM Created Successfully!");
@@ -211,25 +207,28 @@ public class AnimalSportMeeting {
                 }
                 case 2:
                     CCommandFn CCommandFn = (CCommandFn) rootMenu.getMenu().get(1).option;
+                    boolean isDrink = false;
                     try {
-                        CCommandFn.CommandFn();
+                        isDrink = CCommandFn.CommandFn();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("在饮品台休息了一会儿，状态提升！");
-                    switch (player.getAnimalState().toString()) {
-                        case "StatePerfect":
-                            break;
-                        case "StateGood":
-                            player.setAnimalState(new StatePerfect());
-                            break;
-                        case "StateTired":
-                            player.setAnimalState(new StateGood());
-                            break;
-                        default:
-                            break;
+                    if(isDrink){
+                        System.out.println("在饮品台休息了一会儿，状态提升！");
+                        switch (player.getAnimalState().toString()) {
+                            case "StatePerfect":
+                                break;
+                            case "StateGood":
+                                player.setAnimalState(new StatePerfect());
+                                break;
+                            case "StateTired":
+                                player.setAnimalState(new StateGood());
+                                break;
+                            default:
+                                break;
+                        }
+                        CMediatorFn.getInstance().MediateFn();
                     }
-                    CMediatorFn.getInstance().MediateFn();
                     break;
                 case 3:
                     System.out.println("输入要询问的运动员编号：");
@@ -284,6 +283,11 @@ public class AnimalSportMeeting {
             i = input.nextInt();
         }
         System.out.println("动物运动会到此结束！");
+    }
+
+    private static class SingletonHolder {
+        // 静态初始化器，有JVM来保证线程安全
+        private static AnimalSportMeeting instance = new AnimalSportMeeting();
     }
 
 }

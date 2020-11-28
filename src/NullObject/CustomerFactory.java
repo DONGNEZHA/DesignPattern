@@ -2,11 +2,11 @@ package NullObject;
 
 import Iterator.AthleteContainer;
 
-import java.util.List;
+import java.util.*;
 
 public class CustomerFactory {
 
-    private List<String> names = null;
+    private ArrayList<String> names = new ArrayList<>();
 
     public CustomerFactory() {
         for (int i = 0; i < AthleteContainer.getInstance().size(); ++i) {

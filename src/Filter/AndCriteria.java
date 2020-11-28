@@ -8,9 +8,9 @@ public class AndCriteria {
     private Criteria criteria;
     private Criteria otherCriteria;
 
-    public AndCriteria(Criteria criteria,Criteria othercriteria){
-        this.criteria=criteria;
-        this.otherCriteria=othercriteria;
+    public AndCriteria(Criteria criteria, Criteria otherCriteria) {
+        this.criteria = criteria;
+        this.otherCriteria = otherCriteria;
     }
 
     public ArrayList<Athlete> meetCriteria(ArrayList<Athlete> athletes) {

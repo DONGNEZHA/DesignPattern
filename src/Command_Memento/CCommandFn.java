@@ -1,6 +1,11 @@
 package Command_Memento;
 
+import Adapter.AliAdapter;
+import Adapter.WechatPay;
 import Decorator.Drink;
+import Interpreter.ExchangePrice;
+import Interpreter.OriginalPrice;
+import Interpreter.Price;
 
 import java.util.Scanner;
 
@@ -15,13 +20,14 @@ public class CCommandFn {
         return instance;
     }
 
-    public void CommandFn() throws InterruptedException {
+    public boolean CommandFn() throws InterruptedException {
 
         System.out.println("\nPlease choose your drink:");
         System.out.println("[0]Exit [1]Coffee [2]Cola [3]MineralWater:");
         int i;
         Scanner scan_input = new Scanner(System.in);
         i = scan_input.nextInt();
+        boolean isOrder = false;
         while (true) {
             if (i == 0) break;
             switch (i) {
@@ -33,6 +39,7 @@ public class CCommandFn {
                     orderList.append(orderCoffee, myCoffee.createMemento());
                     OrderCondiment coffeeCondiment = new OrderCondiment(orderList, myCoffee);
                     coffeeCondiment.start();
+                    isOrder = coffeeCondiment.start();
                     break;
                 }
                 case 2: {
@@ -43,6 +50,7 @@ public class CCommandFn {
                     orderList.append(orderCola, myCola.createMemento());
                     OrderCondiment colaCondiment = new OrderCondiment(orderList, myCola);
                     colaCondiment.start();
+                    isOrder = colaCondiment.start();
                     break;
                 }
                 case 3: {
@@ -53,15 +61,48 @@ public class CCommandFn {
                     orderList.append(orderMineralWater, myMineralWater.createMemento());
                     OrderCondiment mineralWaterCondiment = new OrderCondiment(orderList, myMineralWater);
                     mineralWaterCondiment.start();
+                    isOrder = mineralWaterCondiment.start();
                     break;
                 }
                 default:
                     break;
             }
-            System.out.println("\nPlease choose your drink:");
-            System.out.println("[0]Exit [1]Coffee [2]Cola [3]MineralWater:");
-            i = scan_input.nextInt();
+            i = 0;
+            if (!isOrder) {
+                System.out.println("\nPlease choose your drink:");
+                System.out.println("[0]Exit [1]Coffee [2]Cola [3]MineralWater:");
+                i = scan_input.nextInt();
+            }
         }
+        if (isOrder) {
+            Price price = new Price();
+            price.SetOriPrice(10f);
+            System.out.println("您的点单原价为10");
+            price.SetExchange(10f);
+            System.out.println("目前汇率 —— 1:10");
+            OriginalPrice oriPriceInterpreter = new OriginalPrice();
+            oriPriceInterpreter.Method(price);
+            float result;
+            ExchangePrice discountPriceInterpreter = new ExchangePrice();
+            result = discountPriceInterpreter.Method(price);
+            System.out.println("现价为：" + result);
+            Scanner scan = new Scanner(System.in);
+            int type;
+            System.out.println("请选择你要使用的支付方式：\n1、Ali支付  2、WeChat支付");
+            type = scan.nextInt();
+            switch (type) {
+                case 1: {
+                    new AliAdapter().pay();
+                    break;
+                }
+                case 2: {
+                    new WechatPay().pay();
+                    break;
+                }
+            }
+            return true;
+        }
+        return false;
     }
 }
 
