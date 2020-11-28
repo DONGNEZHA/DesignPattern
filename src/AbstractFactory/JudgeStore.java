@@ -3,10 +3,7 @@ package AbstractFactory;
 public class JudgeStore {
     //单例模式
     private static JudgeStore instance = new JudgeStore();
-
-    private JudgeStore() {
-    }
-
+    private JudgeStore() { }
     public static JudgeStore getInstance() {
         return instance;
     }
@@ -14,7 +11,7 @@ public class JudgeStore {
     public Judge createJudge(String JudgeName) {
 
         Judge judge = new Judge();
-        JudgeIngredientFactory factory = null;
+        JudgeIngredientFactory factory;
 
         switch (JudgeName) {
             case "MS400":
@@ -50,9 +47,9 @@ public class JudgeStore {
 
     public Judge orderJudge(String JudgeName) {
         Judge judge = createJudge(JudgeName);
-        judge.makeJudge();
+        judge.setGameType(judge.getFactory().CreateType());
+        judge.setJudgeRace(judge.getFactory().CreateRace());
         return judge;
     }
-
 
 }

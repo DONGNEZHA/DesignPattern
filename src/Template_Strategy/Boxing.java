@@ -14,11 +14,6 @@ public class Boxing extends Game implements Preparation {
     }
 
     @Override
-    public void gamePreparation() {
-
-    }
-
-    @Override
     public void gameStart() {
         athleteFighters.fight();
     }
@@ -33,4 +28,8 @@ public class Boxing extends Game implements Preparation {
 
     }
 
+    @Override
+    public void gamePreparation() {
+
+    }
 }

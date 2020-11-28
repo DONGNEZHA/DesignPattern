@@ -1,18 +1,18 @@
 package AbstractFactory;
 
 public class Judge {
-    String JudgeName;
-    Race JudgeRace;
-    GameType gameType;
+    private String JudgeName;
+    private Race JudgeRace;
+    private GameType gameType;
 
-    JudgeIngredientFactory factory;// factory interface
+    private JudgeIngredientFactory factory;// factory interface
+
+    public JudgeIngredientFactory getFactory() {
+        return factory;
+    }
 
     public void setFactory(JudgeIngredientFactory factory) {//bind product factory
         this.factory = factory;
-    }
-
-    public void makeJudge() {
-
     }
 
     public String getJudgeName() {
@@ -29,5 +29,13 @@ public class Judge {
 
     public Race getJudgeRace() {
         return JudgeRace;
+    }
+
+    public void setJudgeRace(Race judgeRace) {
+        JudgeRace = judgeRace;
+    }
+
+    public void setGameType(GameType gameType) {
+        this.gameType = gameType;
     }
 }

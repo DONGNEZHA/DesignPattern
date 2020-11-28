@@ -30,7 +30,7 @@ public abstract class Game {
                 judge.setJudgeName("吉吉国王");
                 break;
             case "400m游泳":
-                judge = JudgeStore.getInstance().orderJudge("DS100");
+                judge = JudgeStore.getInstance().orderJudge("DS400");
                 judge.setJudgeName("蜻蜓队长（水上形态）");
                 break;
             default:

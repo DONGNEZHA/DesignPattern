@@ -29,7 +29,7 @@ public class ScoreSubject implements Subject {
 
     @Override
     public void notifyObserver(int game, int[] rank, double[] score) {
-        for (int i = 0; i < 8; ++i) {
+        for (int i = 0; i < rank.length; ++i) {
             OBList.get(i).update(game, rank[i], score[i]);
         }
     }

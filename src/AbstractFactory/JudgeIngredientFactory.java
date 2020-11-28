@@ -2,9 +2,9 @@ package AbstractFactory;
 
 public interface JudgeIngredientFactory {
 
-    public abstract Race CreateRace();   // Race product
+    Race CreateRace();   // Race product
 
-    public abstract GameType CreateType();   // GameType product
+    GameType CreateType();   // GameType product
 
 
 }

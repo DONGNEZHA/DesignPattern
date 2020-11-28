@@ -40,14 +40,14 @@ public class AnimalSportMeeting {
     //让构造函数为 private，这样该类就不会被实例化
     private AnimalSportMeeting() { }
 
-    private static class SingletonHolder {
-        // 静态初始化器，有JVM来保证线程安全
-        private static AnimalSportMeeting instance = new AnimalSportMeeting();
-    }
     public static AnimalSportMeeting getInstance() {
         return SingletonHolder.instance;
     }
 
+    private static class SingletonHolder {
+        // 静态初始化器，有JVM来保证线程安全
+        private static AnimalSportMeeting instance = new AnimalSportMeeting();
+    }
     //测试信息
     public void showMessage() {
         System.out.println("ASM Created Successfully!");
@@ -285,4 +285,5 @@ public class AnimalSportMeeting {
         }
         System.out.println("动物运动会到此结束！");
     }
+
 }

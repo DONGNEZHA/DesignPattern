@@ -13,7 +13,7 @@ public class OrderCondiment {
         this.myDrink = myDrink;
     }
 
-    public boolean start() throws InterruptedException {
+    public void start() throws InterruptedException {
         System.out.println("\nPlease choose your condiment:");
         System.out.println("[0]Exit [1]Sugar [2]Milk [3]Lemon [4]undo [5]redo [6]OK:");
         int j;
@@ -46,13 +46,11 @@ public class OrderCondiment {
                 System.out.println("Your current order:" + myDrink.getDescription());
             } else if (j == 6) {
                 System.out.println("Order SuccessFully!");
-                return true;
+                System.out.println("Your final order:" + myDrink.getDescription());
             }
-                System.out.println("\nPlease choose your condiment:");
-                System.out.println("[0]Exit [1]Sugar [2]Milk [3]Lemon [4]undo [5]redo [6]OK:");
-                j = scan_input1.nextInt();
-
+            System.out.println("\nPlease choose your condiment:");
+            System.out.println("[0]Exit [1]Sugar [2]Milk [3]Lemon [4]undo [5]redo [6]OK:");
+            j = scan_input1.nextInt();
         }
-        return false;
     }
 }
